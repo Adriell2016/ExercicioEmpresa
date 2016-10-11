@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 
 public class Pessoa {
 	private String name;
@@ -45,22 +47,24 @@ public class Pessoa {
 		double imc = this.peso/(this.altura*this.altura);
 		setImc(imc);
 		
+		DecimalFormat df = new DecimalFormat("#.0");
+		
 		if(imc < 16){
-			retorno = "Magreza grave";
+			retorno = "Seu IMC e " + df.format(imc) + " Magreza grave";
 		}else if(imc >= 16 && imc < 17){
-			retorno = "Magreza moderada";
+			retorno = "Seu IMC e " + df.format(imc) + " Magreza moderada";
 		}else if(imc >= 17 && imc < 18.5){
-			retorno = "Magreza leve";
+			retorno = "Seu IMC e " + df.format(imc) + " Magreza leve";
 		}else if(imc >= 18.5 && imc < 25){
-			retorno = "Saudavel";
+			retorno = "Seu IMC e " + df.format(imc) + " Saudavel";
 		}else if(imc >= 25 && imc < 30){
-			retorno = "Sobrepeso";
+			retorno = "Seu IMC e " + df.format(imc) + " Sobrepeso";
 		}else if(imc >= 30 && imc < 35){
-			retorno = "Obesidade Grau I";
+			retorno = "Seu IMC e " + df.format(imc) + " Obesidade Grau I";
 		}else if(imc >= 35 && imc < 40){
-			retorno = "Obesidade Grau II (severa)";
+			retorno = "Seu IMC e " + df.format(imc) + " Obesidade Grau II (severa)";
 		}else{
-			retorno = "Obesidade Grau III (mórbida)";
+			retorno = "Seu IMC e " + df.format(imc) + " Obesidade Grau III (mórbida)";
 		}
 		
 		return retorno;
